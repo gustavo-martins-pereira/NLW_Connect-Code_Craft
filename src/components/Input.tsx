@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 
 interface InputProps extends ComponentProps<"input"> {
     error?: boolean;
