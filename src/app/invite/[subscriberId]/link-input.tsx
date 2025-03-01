@@ -4,9 +4,11 @@ import { IconButton } from "@/components/IconButton";
 import { InputField, InputIcon, InputRoot } from "@/components/Input";
 import { Copy, Link } from "lucide-react";
 
-export default function LinkInput() {
-    const inviteLink = "https://localhost:3000/invite/123456";
+interface LinkInputProps {
+    inviteLink: string;
+}
 
+export default function LinkInput({ inviteLink }: LinkInputProps) {
     function handleCopyLink() {
         navigator.clipboard.writeText(inviteLink);
     }
