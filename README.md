@@ -1,34 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Code Craft com NextJS
 
-## Getting Started
+Frontend desenvolvido em **NextJS** para um sistema de ranking de convites.
 
-First, run the development server:
+## Sumário
+
+- [Tecnologias Usadas](#-tecnologias-usadas)
+- [Instalação](#-instalação)
+
+## &#x1F5A5; Tecnologias Usadas
+
+<img alt="HTML Logo" height="60" width="60" src="./readme/html.svg" />&nbsp;
+<img alt="CSS Logo" height="60" width="60" src="./readme/css.svg" />&nbsp;
+<img alt="Javascript Logo" height="60" width="60" src="./readme/javascript.svg" />&nbsp;
+<img alt="TypeScript Logo" height="60" width="60" src="./readme/typescript.svg" />&nbsp;
+<img alt="Next Logo" height="60" width="60" src="./readme/next.svg" />&nbsp;
+<img alt="TailwindCSS Logo" height="60" width="60" src="./readme/tailwindcss.svg" />&nbsp;
+
+## &#x2699; Instalação
+
+Instruções para configurar o projeto localmente.
+
+### Pré-requisitos
+
+- [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+
+#### Backend
+
+Backend disponível em https://github.com/rocketseat-education/nlw-connect-node.
+
+### Passos
+1. Clone o repositório:
+```sh
+git clone https://github.com/gustavo-martins-pereira/NLW_Connect-Code_Craft
+```
+
+2. Acesse o diretório do projeto:
+```sh
+cd NLW_Connect-Code_Craft
+```
+
+3. Instale as dependências:
+```sh
+npm install
+
+# ou com Yarn
+yarn install
+```
+
+4. Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+# ou com Yarn
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Isso iniciará o projeto em modo de desenvolvimento, e o site estará disponível em http://localhost:3000.
