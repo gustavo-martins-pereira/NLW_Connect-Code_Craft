@@ -1,9 +1,7 @@
 import Image from "next/image";
 
-import { IconButton } from "@/components/IconButton";
-import { InputField, InputIcon, InputRoot } from "@/components/Input";
-import { Copy, Link } from "lucide-react";
 import logo from "../../assets/logo.svg";
+import LinkInput from "./link-input";
 import Ranking from "./ranking";
 import Stats from "./stats";
 
@@ -35,20 +33,7 @@ export default function Invite() {
                         </p>
                     </div>
 
-                    <InputRoot>
-                        <InputIcon>
-                            <Link className="size-5" />
-                        </InputIcon>
-
-                        <InputField
-                            defaultValue="http://localhost:3000/invite/24462373"
-                            readOnly
-                        />
-
-                        <IconButton className="w-auto -mr-2">
-                            <Copy className="size-5" />
-                        </IconButton>
-                    </InputRoot>
+                    <LinkInput />
 
                     <Stats />
                 </div>
