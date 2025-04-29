@@ -6,6 +6,7 @@ import { subscribeToEvent } from "@/http/api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, Mail, User } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -16,9 +17,8 @@ const subscriptionSchema = z.object({
 
 type SubscriptionSchema = z.infer<typeof subscriptionSchema>;
 
-export default function Form() {
+function FormContent() {
     const router = useRouter();
-
     const searchParams = useSearchParams();
 
     const {
@@ -47,50 +47,43 @@ export default function Form() {
                 Inscrição
             </h2>
 
-            <div className="space-y-3">
-                <div className="space-y-2">
-                    <InputRoot>
-                        <InputIcon>
-                            <User />
-                        </InputIcon>
-                        <InputField
-                            type="text"
-                            placeholder="Nome Completo"
-                            {...register("name")}
-                        />
-                    </InputRoot>
+            <div className="space-y-4">
+                <InputRoot error={!!errors.name}>
+                    <InputIcon>
+                        <User className="size-5" />
+                    </InputIcon>
 
-                    {errors.name && (
-                        <p className="text-danger text-xs font-semibold">
-                            {errors.name.message}
-                        </p>
-                    )}
-                </div>
+                    <InputField
+                        placeholder="Seu nome completo"
+                        {...register("name")}
+                    />
+                </InputRoot>
 
-                <div className="space-y-2">
-                    <InputRoot>
-                        <InputIcon>
-                            <Mail />
-                        </InputIcon>
-                        <InputField
-                            type="email"
-                            placeholder="E-mail"
-                            {...register("email")}
-                        />
-                    </InputRoot>
+                <InputRoot error={!!errors.email}>
+                    <InputIcon>
+                        <Mail className="size-5" />
+                    </InputIcon>
 
-                    {errors.email && (
-                        <p className="text-danger text-xs font-semibold">
-                            {errors.email.message}
-                        </p>
-                    )}
-                </div>
+                    <InputField
+                        type="email"
+                        placeholder="Seu melhor e-mail"
+                        {...register("email")}
+                    />
+                </InputRoot>
             </div>
 
-            <Button type="submit">
-                Confirmar
-                <ArrowRight />
+            <Button type="submit" className="w-full">
+                Garantir minha vaga
+                <ArrowRight className="size-5" />
             </Button>
         </form>
+    );
+}
+
+export default function Form() {
+    return (
+        <Suspense>
+            <FormContent />
+        </Suspense>
     );
 }
